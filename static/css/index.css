@@ -196,3 +196,110 @@ body {
     line-height: 1.3;
   }
 }
+
+
+/* Video & Image Slider - Mobile */
+@media screen and (max-width: 768px) {
+
+  /* Slider 전체 너비 */
+  #custom-image-carousel,
+  #custom-video-carousel {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Slider 안의 각 아이템 */
+  #custom-image-carousel .custom-carousel-item,
+  #custom-video-carousel .custom-carousel-item {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* Image 크기 */
+  #custom-image-carousel img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Video 크기 */
+  #custom-video-carousel video,
+  .publication-video video {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Video Presentation 컨테이너 */
+  .publication-video {
+    width: 100%;
+    height: auto !important;
+    padding-bottom: 0 !important;
+    overflow: visible;
+  }
+
+  /* 이미지 설명 */
+  #custom-image-carousel .image-caption {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+}
+
+
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .video-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
+/* Mobile Font Size */
+@media screen and (max-width: 768px) {
+
+  /* Section Headers: Video Presentation, Abstract, BibTeX */
+  h2.title,
+  h2.title.is-3 {
+    font-size: 1.4rem !important;
+  }
+
+  /* Teaser 아래 설명 */
+  .teaser .subtitle {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+  }
+
+  /* 저자 이름 */
+  .publication-authors {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+  }
+
+  /* 저자 소속 및 학회 정보 */
+  .publication-authors .author-block {
+    font-size: inherit;
+  }
+
+  /* 이미지 슬라이더 설명 */
+  #custom-image-carousel .image-caption {
+    font-size: 0.8rem !important;
+    line-height: 1.4;
+  }
+
+}
