@@ -112,23 +112,7 @@
   </section>
   <!-- End Teaser Section -->
 
-
-  <!-- Paper Abstract -->
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-            Haptic feedback has been employed to enhance shape perception during grasp interactions, improving immersion and task performance in extended reality (XR). Although wearable devices offer precise multi-phalangeal haptic feedback, their bulkiness and complexity often hinder practicality. In addition, fingertip-based tactile feedback often limits users’ ability to perceive a continuous and sequential sensation across the finger surfaces during power grasp. We present VibGrasp, a haptic shape-rendering method and a supporting haptic glove that synchronizes spatiotemporal vibrotactile feedback across multiple phalanges with 1-DOF kinesthetic feedback. Using the funneling illusion and duration-modulated vibration patterns, our approach delivers sequential, continuous sensations along the finger to render various shapes. We also develop a lightweight exoskeleton glove with two dorsal-mounted vibration actuators designed to transmit feedback to the ventral surfaces without obstructing motion. Two perception studies demonstrated consistent shape associations and clear preferences for specific patterns. A VR user-experience study further showed that our method achieved higher ratings for realism, satisfaction, and harmony than prior approaches. These findings offer insights into improving immersive and efficient haptic shape rendering in XR.            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Paper Abstract -->
-
+  
   <!-- YouTube Video -->
   <section class="hero is-small is-light">
     <div class="hero-body">
@@ -149,6 +133,70 @@
   </section>
   <!-- End YouTube Video -->
 
+
+<!-- Image Slider -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div id="custom-image-carousel" class="carousel" style="max-width: 80%; margin: 0 auto;">
+
+        <div class="carousel-container" style="display: flex; justify-content: center; align-items: center; overflow: hidden;">
+
+          <!-- Image 1 -->
+          <div class="custom-carousel-item has-text-centered" style="flex: 0 0 auto; width: 80%;">
+            <img src="./static/images/Image1.jpg" alt="Image 1" style="width: 100%; height: auto;">
+          </div>
+
+          <!-- Image 2 -->
+          <div class="custom-carousel-item has-text-centered" style="flex: 0 0 auto; width: 80%; display: none;">
+            <img src="./static/images/Image2.jpg" alt="Image 2" style="width: 100%; height: auto;">
+          </div>
+
+          <!-- Image 3 -->
+          <div class="custom-carousel-item has-text-centered" style="flex: 0 0 auto; width: 80%; display: none;">
+            <img src="./static/images/Image3.jpg" alt="Image 3" style="width: 100%; height: auto;">
+          </div>
+
+          <!-- Image 4 -->
+          <div class="custom-carousel-item has-text-centered" style="flex: 0 0 auto; width: 80%; display: none;">
+            <img src="./static/images/Image4.jpg" alt="Image 4" style="width: 100%; height: auto;">
+          </div>
+
+        </div>
+
+        <!-- Carousel Navigation -->
+        <div class="carousel-navigation is-centered" style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+          <button id="image-slider-nav-left" class="button is-dark">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="image-slider-nav-right" class="button is-dark">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Image Slider -->
+
+
+
+  <!-- Paper Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            Haptic feedback has been employed to enhance shape perception during grasp interactions, improving immersion and task performance in extended reality (XR). Although wearable devices offer precise multi-phalangeal haptic feedback, their bulkiness and complexity often hinder practicality. In addition, fingertip-based tactile feedback often limits users’ ability to perceive a continuous and sequential sensation across the finger surfaces during power grasp. We present VibGrasp, a haptic shape-rendering method and a supporting haptic glove that synchronizes spatiotemporal vibrotactile feedback across multiple phalanges with 1-DOF kinesthetic feedback. Using the funneling illusion and duration-modulated vibration patterns, our approach delivers sequential, continuous sensations along the finger to render various shapes. We also develop a lightweight exoskeleton glove with two dorsal-mounted vibration actuators designed to transmit feedback to the ventral surfaces without obstructing motion. Two perception studies demonstrated consistent shape associations and clear preferences for specific patterns. A VR user-experience study further showed that our method achieved higher ratings for realism, satisfaction, and harmony than prior approaches. These findings offer insights into improving immersive and efficient haptic shape rendering in XR.            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Paper Abstract -->
 
 
   <!-- BibTeX Citation -->
@@ -261,6 +309,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+</script>
+
+  
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const imageItems = document.querySelectorAll(
+    '#custom-image-carousel .custom-carousel-item'
+  );
+
+  const totalImages = imageItems.length;
+  if (totalImages === 0) return;
+
+  let currentImageIndex = 0;
+
+  function showImage(index) {
+    imageItems.forEach((item, i) => {
+      item.style.display = i === index ? 'block' : 'none';
+    });
+  }
+
+  document.getElementById('image-slider-nav-left')
+    .addEventListener('click', () => {
+      currentImageIndex =
+        (currentImageIndex - 1 + totalImages) % totalImages;
+      showImage(currentImageIndex);
+    });
+
+  document.getElementById('image-slider-nav-right')
+    .addEventListener('click', () => {
+      currentImageIndex =
+        (currentImageIndex + 1) % totalImages;
+      showImage(currentImageIndex);
+    });
+
+  showImage(currentImageIndex);
+});
 </script>
 
 </body>
